@@ -26,6 +26,6 @@ jobs:
           pip install scikit-learn pandas
 
       - name: Run MLflow project
-        working-directory: ML-Project
         run: |
-          mlflow run . -b local --no-conda -P data_path=healthcare_preprocessed.csv
+          cd ML-Project
+          python -m mlflow run . -b local -P data_path=healthcare_preprocessed.csv
