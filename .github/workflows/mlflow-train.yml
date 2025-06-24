@@ -21,9 +21,10 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install mlflow scikit-learn pandas
 
       - name: Run MLflow project
+        working-directory: ML-Project
         run: |
-          cd ML-Project
-          mlflow run . -b local
+          mlflow run . -b local --no-conda -P data_path=healthcare_preprocessed.csv
