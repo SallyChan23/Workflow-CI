@@ -21,8 +21,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install mlflow scikit-learn pandas
+          pip install --upgrade pip
+          pip install --upgrade mlflow
+          pip install scikit-learn pandas
 
       - name: Run MLflow project
         working-directory: ML-Project
