@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'ML-Project/**'
-      - '.workflow/**'
+      - '.github/workflows/**'
 
 jobs:
   build-and-train:
@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mlflow
+          pip install mlflow scikit-learn pandas
 
       - name: Run MLflow project
         run: |
