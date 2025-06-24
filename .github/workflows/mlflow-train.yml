@@ -28,4 +28,4 @@ jobs:
       - name: Run MLflow project
         run: |
           cd ML-Project
-          mlflow run . -b local -P data_path=healthcare_preprocessed.csv
+          mlflow run . -b local --env-manager=local -P data_path=healthcare_preprocessed.csv
