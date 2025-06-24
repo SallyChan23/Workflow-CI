@@ -1,10 +1,10 @@
-name: health-detection
+name: Train ML model using MLflow Project
 
-entry_points:
-  main:
-    parameters:
-      data_path: {type: str}
-    command: "python modelling.py --data_path {data_path}"
+on:
+  push:
+    paths:
+      - 'ML-Project/**'
+      - '.github/workflows/**'
 
 jobs:
   build-and-train:
@@ -28,4 +28,4 @@ jobs:
       - name: Run MLflow project
         run: |
           cd ML-Project
-          python -m mlflow run . -b local -P data_path=healthcare_preprocessed.csv
+          mlflow run . -b local -P data_path=healthcare_preprocessed.csv

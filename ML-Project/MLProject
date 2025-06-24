@@ -1,9 +1,7 @@
-name: health-model
-
-conda_env: conda.yaml
+name: health-detection
 
 entry_points:
   main:
     parameters:
-      data_path: {type: str, default: "healthcare_preprocessed.csv"}
+      data_path: {type: str}
     command: "python modelling.py --data_path {data_path}"
