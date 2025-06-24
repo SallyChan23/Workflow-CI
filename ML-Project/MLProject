@@ -1,4 +1,4 @@
-name: health-ml-project
+name: health-model
 
 conda_env: conda.yaml
 
